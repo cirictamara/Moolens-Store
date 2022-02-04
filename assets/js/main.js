@@ -1166,7 +1166,7 @@ function createFooter() {
          <p class = "w-100 px-2 pb-3 fs-16 ls-1 text-light">Copyright &copy; 2022 The Moolen's Store &verbar; All Rights Reserved</p>`;
 
     for (let i = 0; i < links.length; i++) 
-        content += `<a href = "${links[i].href}" class = "${links[i].margin} mb-2 font-weight-bold font-family fs-10 ls-2 text-info">${links[i].name}</a>`;
+        content += `<a href = "assets/${links[i].href}" class = "${links[i].margin} mb-2 font-weight-bold font-family fs-10 ls-2 text-info">${links[i].name}</a>`;
     
     content += "</div>";  
 
