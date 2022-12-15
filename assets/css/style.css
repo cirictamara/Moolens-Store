@@ -31,8 +31,15 @@ html {scroll-behavior: smooth;}
 
 /* Tags */
 
-h1, h2, h3, h4, h5, a:not(.nav-link, #footer a), .arrows > span {font-family: 'Chelsea Market', cursive;}
-h1, h2, h3, h4:not(#services h4), .nav-link {font-weight: 700;}
+h1, h2, h3, h4, h5, 
+a:not(.nav-link, #footer a), 
+arrows > span {
+    font-family: 'Chelsea Market', cursive;
+}
+
+h1, h2, h3, h4:not(#services h4), .nav-link {
+    font-weight: 700;
+}
 
 p {margin-bottom: 0 !important;}
 a {text-decoration: none !important;}
@@ -134,10 +141,10 @@ button {
 
 /* [Page Loader] [Page Progess Bar] */
 
+#page-loader > div {width: 250px;}
+
 #page-loader > div:first-of-type {animation: hide-1 2.2s ease-out infinite;}
 #page-loader > div:last-of-type {animation: hide-2 1.7s ease-out infinite;}
-
-#page-loader > div {width: 250px;}
 
 #page-loader {background-color: rgb(149, 255, 255);}
 
@@ -152,7 +159,7 @@ button {
     background: linear-gradient(to right, rgb(255, 100, 126), var(--pink)); 
 }
 
-/* [Header] [Footer] */
+/* [Header] */ 
 
 #header {
 	padding: 10px 70px 10px 30px;
@@ -169,6 +176,8 @@ button {
 
 #header a.active {color: var(--pink);}
 #header a {color: rgb(0, 0, 0);}
+
+/* [Footer] */
 
 #footer {padding: 100px 0 27px !important;}
 
@@ -191,7 +200,10 @@ button {
 
 /* [index.html] */
 
-#slide-1 > .slide-content, #slide-3 > .slide-content {bottom: 15%; left: 120px;}
+#slide-1 > .slide-content, 
+#slide-3 > .slide-content {
+    bottom: 15%; left: 120px;
+}
 
 #slide-1 > .slide-content {width: 780px;}
 
@@ -296,7 +308,6 @@ button {
 #about > div:last-of-type {width: 600px;} 
 
 #about > div > p.fs-35 {line-height: 40px;}
-
 #about > div > p:last-of-type {line-height: 22px;}
 
 #about .ml-6 {
@@ -457,12 +468,20 @@ select {padding: 4px 8px;}
 input, select {height: 35px;}
 textarea {height: 120px;}
 
-::placeholder, #full-name:focus, #e-mail:focus, textarea:focus, select {
+select, 
+#full-name:focus, 
+#e-mail:focus, 
+textarea:focus,
+::placeholder {
     letter-spacing: -0.5px;
     color: var(--grey);
 }
 
-::placeholder, select, :focus:not(#submit:focus, a:focus) {font-size: 16px;}
+select, 
+::placeholder, 
+:focus:not(#submit:focus, a:focus) {
+    font-size: 16px;
+}
 
 :focus, select {outline: none !important;}
 
