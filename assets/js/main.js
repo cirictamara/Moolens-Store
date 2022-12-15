@@ -1,5 +1,3 @@
-/* Flex */
-
 const flexColumn = ["d-flex", "flex-column", "justify-content-center", "align-items-center"];
 const flexRow = ["d-flex", "flex-row", "flex-wrap", "justify-content-center", "align-items-center"];
 
@@ -47,15 +45,16 @@ function appendChildren(element, childern) {
 $(document).ready(function() {
     let loader = $("#page-loader");
 
-    const loaderImages = [ {"src": "logo.png", "alt": "Moolen's Logo"}, 
-                           {"src": "logo.png", "alt": "Moolen's Logo"} ];
+    const loaderImages = [ 
+        {"src": "logo.png", "alt": "Moolen's Logo"}, 
+        {"src": "logo.png", "alt": "Moolen's Logo"} 
+    ];
 
     let loaderContent = "";
     for (let i = 0; i < 2; i++) 
-        loaderContent += 
-        `<div class = "position-absolute">
-             <img src = "assets/img/${loaderImages[i].src}" alt = "${loaderImages[i].alt}" />
-         </div>`;
+        loaderContent += `<div class = "position-absolute">
+                              <img src = "assets/img/${loaderImages[i].src}" alt = "${loaderImages[i].alt}" />
+                          </div>`;
         
     loader.html(loaderContent);
 
@@ -169,8 +168,7 @@ function createNavigationMenu() {
     let navigationMenu = document.createElement("div");
     navigationMenu.classList.add("collapse", "navbar-collapse");
 
-    let pages = 
-    [ 
+    let pages = [ 
         {"name": "Welcome", "href": "#slider"},
         {"name": "About", "href": "#about"},
         {"name": "Gallery", "href": "#gallery-header"},
@@ -246,8 +244,7 @@ function createSlideShow() {
 }
 
 function createSlides() {
-    const slideImages = 
-    [ 
+    const slideImages = [ 
         {
             "img_1": {"src": "cover-1.jpg", "alt": "Girl Editorial Photos"}, 
             "img_2": {"src": "cover-1.gif", "alt": "Collage 1"},
@@ -265,8 +262,7 @@ function createSlides() {
         }
     ];
 
-    const slideContents = 
-    [
+    const slideContents = [
         {
             "h2": "Welcome to Moolen's Store.", 
             "h1": "Childhood is an extraordinary and magical time, fully of challenges and countless adventures. We'd be delighted to be a part of it."
@@ -367,8 +363,10 @@ function sliderControls() {
     let controls = document.createElement("div");
     setAttributes([controls], ["id", "slider-controls", "class", "position-absolute d-flex flex-row"]);
 
-    const buttons = [ {"id": "previous", "icon": "&lsaquo;"}, 
-                      {"id": "next", "icon": "&rsaquo;"} ];
+    const buttons = [ 
+        {"id": "previous", "icon": "&lsaquo;"}, 
+        {"id": "next", "icon": "&rsaquo;"} 
+    ];
 
     for (let i = 0; i < buttons.length; i++) {
         let a = document.createElement("a");
@@ -447,23 +445,23 @@ addClasses([zoomEffectsSection], flexRow);
 zoomEffectsSection.innerHTML = createImageElements() + createTextElements();
 
 function createImageElements() {
-    const attributes = [ {"id": 1, "width": "w-50", "order": "order-1"}, 
-                         {"id": 2, "width": "w-25", "order": "order-3"}, 
-                         {"id": 3, "width": "w-25", "order": "order-5"}, 
-                         {"id": 4, "width": "w-50", "order": "order-6"} ];
+    const attributes = [ 
+        {"id": 1, "width": "w-50", "order": "order-1"}, 
+        {"id": 2, "width": "w-25", "order": "order-3"}, 
+        {"id": 3, "width": "w-25", "order": "order-5"}, 
+        {"id": 4, "width": "w-50", "order": "order-6"} 
+    ];
 
     var content = "";
     for (let i = 0; i < attributes.length; i++) 
-        content += 
-        `<div id = "image-${attributes[i].id}" class = "${attributes[i].width} ${attributes[i].order} overflow-hidden">
-             <div class = "img-holder w-100 h-100"></div>
-         </div>`;
+        content += `<div id = "image-${attributes[i].id}" class = "${attributes[i].width} ${attributes[i].order} overflow-hidden">
+                        <div class = "img-holder w-100 h-100"></div>
+                    </div>`;
     return content;
 }
 
 function createTextElements() {
-    const divContent = 
-    [ 
+    const divContent = [ 
         {
             "h4": "The world's cutest place for your little ones", 
             "p": "Moolen's Store is the magical place, which will assist you in preparing a ideal gifts for kids, help with decorating dreams-worthy rooms, as well as taking care of mothers' unique needs by providing the high quality products dedicated for all their needs.", 
@@ -478,14 +476,13 @@ function createTextElements() {
 
     var content = "";
     for (let i = 0, j = 2; i < 2; i++, j += 2) 
-        content +=
-        `<div class = "w-25 px-6 d-flex flex-column justify-content-center order-${j} bg-light">
-             <h4 class = "mb-5 fs-25 darkslatergray">${divContent[i].h4}</h4>
-             <p class = "mb-4">${divContent[i].p}</p>
-             <a class = "w-auto arrows" href = "${divContent[i].a.href}">
-                 <span class = "position-relative fs-13 ls-1 text-pink">${divContent[i].a.name} </span>
-             </a>
-         </div>`;
+        content += `<div class = "w-25 px-6 d-flex flex-column justify-content-center order-${j} bg-light">
+                        <h4 class = "mb-5 fs-25 darkslatergray">${divContent[i].h4}</h4>
+                        <p class = "mb-4">${divContent[i].p}</p>
+                        <a class = "w-auto arrows" href = "${divContent[i].a.href}">
+                            <span class = "position-relative fs-13 ls-1 text-pink">${divContent[i].a.name} </span>
+                        </a>
+                    </div>`;
     return content;
 }
 
@@ -506,8 +503,7 @@ addClasses([about], flexRow);
 about.innerHTML = createAboutSection();
 
 function createAboutSection() {
-    const paragraphs = 
-    [
+    const paragraphs = [
         {
             "class": "mb-5 font-family font-weight-bold fs-35", 
             "text": "We're the parents, that put harmonious and healthy kid's development at the pedestal."
@@ -532,10 +528,9 @@ function createAboutSection() {
                 content += `<h2 class = "mb-4 fs-14 ls-2 darkslatergray">About Moolen's.</h2>`;
                 for (let j = 0; j < paragraphs.length; j++) 
                     content += `<p class = "${paragraphs[j].class}">${paragraphs[j].text}</p>`;
-                content +=
-                `<button id = "our-story" type = "button" class = "ml-6 cursore-pointer arrows">
-                     <span class = "fs-14 ls-0 text-pink">Our Story </span>
-                 </button>`;
+                content += `<button id = "our-story" type = "button" class = "ml-6 cursore-pointer arrows">
+                                <span class = "fs-14 ls-0 text-pink">Our Story </span>
+                            </button>`;
             break;
         }
         content += "</div>";
@@ -549,8 +544,7 @@ function createAboutSection() {
 addClasses([document.querySelector("#modal-our-story")], flexColumn);
 
 $(document).ready(function() {
-    let paragraphs = 
-    [
+    let paragraphs = [
         {
             "class": "px-3 font-family fs-19 ls-1", 
             "text": "Moolen's are here to make day happy to your little ones and take them to the magical world of fairytales where every miracle is possible!"
@@ -565,14 +559,12 @@ $(document).ready(function() {
     for (let i = 0; i < paragraphs.length; i++)
         pTags += `<p class = "${paragraphs[i].class}">${paragraphs[i].text}</p>`;
 
-    let content = 
-    `<div id = "modal-body" class = "row-12 position-relative text-center bg-white">
-         <div class = "position-absolute rounded-circle bg-darkslatergray"></div>
-         <button id = "close" type = "button" class = "position-absolute cursore-pointer text-white">&#10006;</button>
-         <h3 class = "mb-5 position-relative text-uppercase fs-14 ls-5 z-1">Our Story</h3>
-         ${pTags}
-     </div>
-    `;
+    let content = `<div id = "modal-body" class = "row-12 position-relative text-center bg-white">
+                      <div class = "position-absolute rounded-circle bg-darkslatergray"></div>
+                      <button id = "close" type = "button" class = "position-absolute cursore-pointer text-white">&#10006;</button>
+                      <h3 class = "mb-5 position-relative text-uppercase fs-14 ls-5 z-1">Our Story</h3>
+                      ${pTags}
+                   </div>`;
 
     $("#modal-our-story").html(content);
 
@@ -589,10 +581,9 @@ $(document).ready(function() {
 let gallery = document.querySelector("#gallery");
 gallery.classList.add("container-fluid", "position-relative");
 
-gallery.innerHTML =
-`<header id = "gallery-header" class = "position-absolute z-1 text-center">
-	 <h2 class = "fs-35 ls-1">Gallery</h2>
- </header>`;
+gallery.innerHTML = `<header id = "gallery-header" class = "position-absolute z-1 text-center">
+	                     <h2 class = "fs-35 ls-1">Gallery</h2>
+                     </header>`;
 
 createGallery();
 
@@ -601,8 +592,7 @@ function createGallery() {
 	main.classList.add("row-12", "w-100");
 	addClasses([main], flexRow);
 	
-    const captions = 
-	[ 
+    const captions = [ 
         {
             "title": "The world's cutest place", 
             "description": "In order to create a lovely space friendly for everyone, regardless of age, most of the store's furniture were designed to be oval, organic shape. In the central part a sort of arcade labyrinth emerged, where chosen trolley can be easily taken for a little test drive. A full array of them are on the display in the backend wall of the local, set on spacious, regular shelf. Aforesaid roundness can also be spotted in the central's island (made wholly out of terrazzo) form resembling paramecium."
@@ -707,17 +697,15 @@ function galleryImagesOnHover(value, x) {
 let services = document.getElementById("services");
 addClasses([services], flexColumn);
 
-services.innerHTML =
-`<header>
-     <h2 class = "fs-40 ls-3 darkslatergray">Services</h2>
- </header>
- <main class = "row-12 w-100 px-5">${createServices()}</main>`;
+services.innerHTML = `<header>
+                          <h2 class = "fs-40 ls-3 darkslatergray">Services</h2>
+                      </header>
+                      <main class = "row-12 w-100 px-5">${createServices()}</main>`;
 
 addClasses([services.lastElementChild], flexRow);
 
 function createServices() {
-    let serviceLists = 
-    [
+    let serviceLists = [
         {
             "id": 1,
             "title": "Interior Deisgn &amp; Furniture", 
@@ -743,11 +731,10 @@ function createServices() {
 
     var content = ""
     for (let serviceList of serviceLists) {
-        content += 
-        `<article id = "service-${serviceList.id}" class = "col-12 col-md-9 col-lg-6 col-xl-5 px-sm-5 mb-0 mb-sm-2 mb-lg-3 service align-self-start text-center">
-             <h4 class = "mb-3 mb-md-4 mt-2 mt-lg-0 pb-3 fs-22 ls-2 text-pink">${serviceList.title}</h4>
-             <ul class = "w-75">${createServiceList(serviceList.list)}</ul>
-         </article>`
+        content += `<article id = "service-${serviceList.id}" class = "col-12 col-md-9 col-lg-6 col-xl-5 px-sm-5 mb-0 mb-sm-2 mb-lg-3 service align-self-start text-center">
+                        <h4 class = "mb-3 mb-md-4 mt-2 mt-lg-0 pb-3 fs-22 ls-2 text-pink">${serviceList.title}</h4>
+                        <ul class = "w-75">${createServiceList(serviceList.list)}</ul>
+                    </article>`;
     }
     return content;
 }
@@ -769,8 +756,7 @@ addClasses([sectionNumberCounters], flexRow);
 createNumberCounters();
 
 function createNumberCounters() {
-    const numberCounters = 
-    [ 
+    const numberCounters = [ 
         {"id": 1, "number": 4150, "text": "Quality Products"},
         {"id": 2, "number": 36, "text": "Children's Brands"},
         {"id": 3, "number": 981, "text": "Humanitarian Actions"}, 
@@ -780,11 +766,10 @@ function createNumberCounters() {
     
     var content = "";
     for (let numberCounter of numberCounters) 
-        content += 
-        `<article id = "number-counter-${numberCounter.id}" class = "number-counter d-flex flex-column justify-content-center align-items-center text-center">
-             <span class = "number mb-2 font-family fs-35 ls-5" value = "${numberCounter.number}"></span>
-             <span class = "text font-family fs-13 ls-2">${numberCounter.text}</span>
-         </article>`; 
+        content += `<article id = "number-counter-${numberCounter.id}" class = "number-counter d-flex flex-column justify-content-center align-items-center text-center">
+                        <span class = "number mb-2 font-family fs-35 ls-5" data-number = "${numberCounter.number}"></span>
+                        <span class = "text font-family fs-13 ls-2">${numberCounter.text}</span>
+                    </article>`; 
     sectionNumberCounters.innerHTML = content;
 }
 
@@ -806,7 +791,7 @@ function numberCountersFunctionality() {
     let numbers = document.querySelectorAll(".number");
     numbers.forEach(number => {
         let animate = () => {
-            let value = number.getAttribute("value");
+            let value = number.data("number");
             let data = + number.textContent;
             if (data < value) {
                 number.textContent = Math.ceil(data + value / 30);
@@ -830,23 +815,21 @@ function createPinsOnMap() {
     let mapMarkers = document.getElementById("map-markers");
     let mapMarkersContent = "";
     for (let i = 0; i < 3; i++) {
-        mapMarkersContent +=
-       `<div id = "map-marker-${i + 1}" class = "position-absolute d-flex flex-column justify-content-start">
-             <i class = "fas fa-map-marker"></i>
-             <span class = "w-90 position-absolute rounded-circle"></span>
-        </div>`
+        mapMarkersContent += `<div id = "map-marker-${i + 1}" class = "position-absolute d-flex flex-column justify-content-start">
+                                  <i class = "fas fa-map-marker"></i>
+                                  <span class = "w-90 position-absolute rounded-circle"></span>
+                              </div>`;
     }
     mapMarkers.innerHTML = mapMarkersContent;
 }
 
 let contactUs = document.querySelector("#contact-us > div");
 
-contactUs.innerHTML = 
-`<h2 class = "mb-3 fs-25 ls-3">Contact Us.</h2>
- <p class = "pr-2">
-     <span class = "font-weight-bold font-family fs-12 ls-1">Watch Out!</span>
-      If you have any questions, suggestions, comments or want to schedule a meeting with Moolen's employees, feel free to contact us via this contact form.
- </p>`
+contactUs.innerHTML = `<h2 class = "mb-3 fs-25 ls-3">Contact Us.</h2>
+                       <p class = "pr-2">
+                           <span class = "font-weight-bold font-family fs-12 ls-1">Watch Out!</span>
+                           If you have any questions, suggestions, comments or want to schedule a meeting with Moolen's employees, feel free to contact us via this contact form.
+                       </p>`;
 
 let form = document.getElementById("contact-form");
 form.classList.add("d-flex", "flex-row", "flex-wrap", "justify-content-between");
@@ -854,8 +837,7 @@ form.classList.add("d-flex", "flex-row", "flex-wrap", "justify-content-between")
 createContactForm();
 
 function createContactForm() {
-    const inputs = 
-    [ 
+    const inputs = [ 
         {
             "id": "full-name", 
             "type": "text", 
@@ -1066,8 +1048,7 @@ function checkDateAndTime(element) {
         timeMinutes = parseInt(time.substring(3, 5));
         timeSeconds = 0;
 
-        let workingTime = 
-        {
+        let workingTime = {
             "monday_friday": {"open": 8, "close": 20}, 
             "saturday": {"open": 9, "close": 17}
         };
@@ -1131,8 +1112,7 @@ function createFooter() {
         }
     ];
 
-    let links = 
-    [ 
+    let links = [ 
         {"name": "Sitemap", "href": "sitemap.xml", "margin": "mr-3"},
         {"name": "Documentation", "href": "documentation.pdf", "margin": "ml-3"} 
     ];
@@ -1141,15 +1121,14 @@ function createFooter() {
 
     content += `<section class = "row-12 w-100 mb-sm-5 px-sm-5 text-light">`;
     for (let i = 0; i < stores.length; i++) {
-        content += 
-        `<article class = "store mb-sm-4 mb-lg-0 col-12 col-sm-11 col-md-10 col-lg-4 col-xl-3 d-flex flex-lg-row flex-wrap justify-content-center align-items-center">
-             <header class = "w-100 mt-sm-2 mt-lg-0 mb-lg-3 mr-sm-5 mr-lg-0">
-                 <h5 class = "fs-16 ls-2 text-light-blue">
-                     ${stores[i].name}
-                     <span class = "d-block pt-1 font-family fs-11 ls-2">Moolen's Store</span>
-                 </h5>
-             </header>
-             <main class = "w-100 ml-5 ml-lg-0">`;
+        content += `<article class = "store mb-sm-4 mb-lg-0 col-12 col-sm-11 col-md-10 col-lg-4 col-xl-3 d-flex flex-lg-row flex-wrap justify-content-center align-items-center">
+                        <header class = "w-100 mt-sm-2 mt-lg-0 mb-lg-3 mr-sm-5 mr-lg-0">
+                            <h5 class = "fs-16 ls-2 text-light-blue">
+                                ${stores[i].name}
+                                <span class = "d-block pt-1 font-family fs-11 ls-2">Moolen's Store</span>
+                            </h5>
+                        </header>
+                        <main class = "w-100 ml-5 ml-lg-0">`;
         for (let storeInfo in stores[i])
             if (storeInfo != "name")
                 content += `<p>${stores[i][storeInfo]}</p>`;
@@ -1161,9 +1140,8 @@ function createFooter() {
 
     content += `<div class = "mt-5">${createSocialMedia()}</div>`;
 
-    content +=
-    `<div class = "w-100 mt-3 px-4 px-sm-5 d-flex flex-row flex-wrap justify-content-center justify-content-xl-end align-items-center">
-         <p class = "w-100 px-2 pb-3 fs-16 ls-1 text-light">Copyright &copy; 2022 The Moolen's Store &verbar; All Rights Reserved</p>`;
+    content += `<div class = "w-100 mt-3 px-4 px-sm-5 d-flex flex-row flex-wrap justify-content-center justify-content-xl-end align-items-center">
+                    <p class = "w-100 px-2 pb-3 fs-16 ls-1 text-light">Copyright &copy; 2022 The Moolen's Store &verbar; All Rights Reserved</p>`;
 
     for (let i = 0; i < links.length; i++) 
         content += `<a href = "assets/${links[i].href}" class = "${links[i].margin} mb-2 font-weight-bold font-family fs-10 ls-2 text-info">${links[i].name}</a>`;
@@ -1174,8 +1152,7 @@ function createFooter() {
 }
 
 function createSocialMedia() {
-    let socialMedia = 
-    [ 
+    let socialMedia = [ 
         {"href": "https://www.instagram.com", "icon": "fab fa-instagram"}, 
         {"href": "https://www.facebook.com", "icon": "fab fa-facebook-f"}, 
         {"href": "https://twitter.com/", "icon": "fab fa-twitter"}, 
@@ -1184,11 +1161,10 @@ function createSocialMedia() {
 
     var content = `<ul id = "social-media" class = "nav">`;
     for (let i = 0; i < socialMedia.length; i++) 
-        content += 
-        `<li class = "nav-item">
-             <a class = "nav-link" href = "${socialMedia[i].href}" target = "_blank">
-                 <i class = "${socialMedia[i].icon} fs-16 text-pink"></i>
-             </a>
-         </li>`;
+        content += `<li class = "nav-item">
+                        <a class = "nav-link" href = "${socialMedia[i].href}" target = "_blank">
+                            <i class = "${socialMedia[i].icon} fs-16 text-pink"></i>
+                        </a>
+                    </li>`;
     return  content + "</ul>";
 }
